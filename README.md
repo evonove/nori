@@ -5,4 +5,8 @@ starting from a list of feedly streams.
 
 ## Installation
 
-    pip install
+    pip install https://github.com/evonove/nori/archive/master.zip
+
+## Usage
+
+    nori --help
