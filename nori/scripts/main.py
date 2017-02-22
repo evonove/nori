@@ -35,7 +35,10 @@ def stats(facebook_token, feedly_token, count, days):
         # the request's url
         for group in grouper(links, 4):
             stats = fb.get_urls(*group)
-            results.extend(list(stats.values()))
+
+            # filter out stats with no share to avoid errors
+            stats = [item for item in stats.values() if 'og_object' in item]
+            results.extend(stats)
 
     return results
 
